@@ -104,7 +104,7 @@ class LoaderTest extends \PHPUnit_Framework_TestCase
         $fixturesLoaderProphecy = $this->prophesize('Hautelook\AliceBundle\Alice\DataFixtures\Fixtures\Loader');
         $fixturesLoaderProphecy->getPersister()->willReturn($oldPersister);
         $fixturesLoaderProphecy->load('random/file1', [])->willReturn([$objects[0]]);
-        $fixturesLoaderProphecy->load('random/file2', [])->willReturn([$objects[0]]);
+        $fixturesLoaderProphecy->load('random/file2', [$objects[0]])->willReturn([$objects[0]]);
         $fixturesLoaderProphecy->setPersister($persisterProphecy->reveal())->shouldBeCalled();
         $fixturesLoaderProphecy->setPersister($oldPersister)->shouldBeCalled();
 
@@ -139,7 +139,7 @@ class LoaderTest extends \PHPUnit_Framework_TestCase
         $fixturesLoaderProphecy = $this->prophesize('Hautelook\AliceBundle\Alice\DataFixtures\Fixtures\Loader');
         $fixturesLoaderProphecy->getPersister()->willReturn($oldPersister);
         $fixturesLoaderProphecy->load('random/file1', [])->willReturn([$objects[0]]);
-        $fixturesLoaderProphecy->load('random/file2', [])->willReturn([$objects[0]]);
+        $fixturesLoaderProphecy->load('random/file2', [$objects[0]])->willReturn([$objects[0]]);
         $fixturesLoaderProphecy->setPersister($persisterProphecy->reveal())->shouldBeCalled();
         $fixturesLoaderProphecy->setPersister($oldPersister)->shouldBeCalled();
 
